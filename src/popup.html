@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" style="width: 350px; height: 300px">
+	<head>
+
+		<script src="jquery.js"></script>
+		<script src="popup.js"></script>
+		<style>
+			body{
+
+				background: #EDEFEF url("bg.png") no-repeat;
+				font-family: Arial;
+			}
+
+			label{
+				cursor: pointer;
+				display: block;
+			}
+
+			label:hover{
+				color: #333;
+			}
+
+			.disabled{
+			color: #aaa;
+			}
+		</style>
+
+	</head>
+	<body style="width: 300px">
+		<h2>Slorum strap-on</h2>
+		<div>
+		<b>Options</b>
+		<label id="nsfwImages" >
+			<input type="checkbox" name="nsfwImages" >
+			Load NSFW images
+		</label>
+		<label id="embedMedia">
+			<input type="checkbox" name="embedMedia" id="embedMedia">
+			Embed media links
+		</label>
+        <label id="resizeTall" >
+            <input type="checkbox" name="resizeTall" >
+            Resize tall images to fit inside browser window
+        </label>
+		<label id="reposition">
+			<input type="checkbox" name="reposition">
+			Disable reposition after inserts
+		</label>
+		<br>
+            <!--
+		<label id="autorefresh">
+			Auto refresh forum front page<br>
+			<select name="autorefresh">
+				<option value="0">Do not refresh</option>
+				<option value="5000">5 seconds</option>
+				<option value="10000">10 seconds</option>
+				<option value="30000">30 seconds</option>
+				<option value="60000">1 minute</option>
+				<option value="600000">10 minutes</option>
+			</select>
+		</label>
+		-->
+		<p style="color: #aaa">
+			<b>Keyboard shortcuts</b><br>
+
+				J - next picture<br>
+				K - previous picture<br>
+				N - next forum page<br>
+				H - Scroll to first unread post<br>
+				F - Forum front page<br>
+		</p>
+		<p>
+			Maintained by SpinDrift
+		</p>
+
+	</div>
+
+		<div id="log"></div>
+
+	</body>
+</html>
