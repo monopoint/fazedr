@@ -172,13 +172,17 @@ $(function() {
                 }
                 
                 // load gifvs
-                if (link.indexOf("imgur.com/") > 0 && link.indexOf(".gifv") > 0){
+                if (link.indexOf("imgur.com/") > 0 && ( link.indexOf(".gifv") > 0 || link.indexOf(".mp4" > 0) )){
                     
                     // extracting id
                     var gifvpre = link.indexOf("imgur.com/");
                     if (gifvpre == -1) return;
                     gifvpre += "imgur.com/".length;
-                    var gifvpost = link.indexOf(".gifv");
+                    if (link.indexOf(".gifv") > 0 ){
+                        var gifvpost = link.indexOf(".gifv");
+                    } else {
+                         var gifvpost = link.indexOf(".mp4");
+                    }
                     if (gifvpost == -1) gifvpost = link.length;
                     var gifvId = link.substring(gifvpre, gifvpost);
                     
@@ -204,7 +208,7 @@ $(function() {
                                 gifvElms.each(function(){
                                     if ($(this).next("video").size() == 0){  // Avoid duplicate embedding
                                         $(this).after("<video id=" + gifvId + " width=" + gifvWidth + " height=" + gifvHeight + " autoplay loop style='display: block;'>" +
-                                        "<source id=webmsource src='https://i.imgur.com/" + gifvId + ".webm' type=video/webm>" +
+                                        "<source id=webmsource src='https://i.imgur.com/" + gifvId + ".mp4' type=video/mp4>" +
                                         "</video>");
                                     }
                                 });
